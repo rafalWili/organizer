@@ -1,0 +1,37 @@
+appId: com.birthdayly.app
+productName: Birthdayly
+copyright: Copyright © 2026 Birthdayly Contributors
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+extraResources:
+  - from: build/icon.png
+    to: icon.png
+  - from: build/tray.png
+    to: tray.png
+asarUnpack:
+  - "**/*.node"
+npmRebuild: false
+win:
+  target:
+    - nsis
+  icon: build/icon.ico
+mac:
+  target:
+    - dmg
+  category: public.app-category.lifestyle
+  icon: build/icon.png
+linux:
+  target:
+    - AppImage
+  category: Utility
+  icon: build/icon.png
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+publish: null
